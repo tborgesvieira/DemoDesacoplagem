@@ -2,7 +2,7 @@
 Isolamento do ASP.NET Identity e utilização no Domínio
 
 ##Objetivo
-Utilizar a separação para a criação do usuário baseado em dados de uma pessoa que está se cadastrado no sistema
+A ideia que o usuário seja criado usando o CPF para cadastro inicial no Identiy
 
-###Referências
+###Referência
 http://eduardopires.net.br/2015/09/desacoplando-o-asp-net-identity-do-mvc-e-dominio/
