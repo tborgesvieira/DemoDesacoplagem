@@ -33,6 +33,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\PessoaFisica.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
