@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DD.DemoDesacoplagem.Application\DD.DemoDesacoplagem.Application.csproj">
+      <Project>{431069e6-8f2e-41c9-b83e-595ba914a6d9}</Project>
+      <Name>DD.DemoDesacoplagem.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DD.DemoDesacoplagem.CrossCutting.Identity\DD.DemoDesacoplagem.Infra.CrossCutting.Identity.csproj">
       <Project>{95D85B2E-3E6E-401D-B442-8F47526297E4}</Project>
       <Name>DD.DemoDesacoplagem.Infra.CrossCutting.Identity</Name>

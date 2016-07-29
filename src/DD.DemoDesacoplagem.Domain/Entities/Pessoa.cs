@@ -8,6 +8,6 @@ namespace DD.DemoDesacoplagem.Domain.Entities
         public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
-        public virtual ICollection<PessoaFisica> EPessoaFisicas { get; set; }
+        public virtual PessoaFisica PessoaFisica { get; set; }
     }
 }

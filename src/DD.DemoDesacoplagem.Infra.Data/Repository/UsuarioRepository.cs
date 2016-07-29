@@ -16,7 +16,7 @@ namespace DD.DemoDesacoplagem.Infra.Data.Repository
             _db = new DemoDesacoplagemContext();
         }
 
-        public Usuario ObjectForId(string id)
+        public Usuario ObjectForId(object id)
         {
             return _db.Usuarios.Find(id);
         }

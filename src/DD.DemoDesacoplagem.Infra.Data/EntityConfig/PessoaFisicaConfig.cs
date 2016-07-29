@@ -13,11 +13,8 @@ namespace DD.DemoDesacoplagem.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(11);
 
-            HasRequired(pf => pf.EPessoa)
-                .WithOptional();
-
-            HasRequired(pf => pf.EUsuario)
-                .WithOptional();
+            HasRequired(pf => pf.FkPessoa)
+                .WithRequiredPrincipal(p => p.PessoaFisica);            
 
             ToTable("PessoasFisicas");                                    
         }

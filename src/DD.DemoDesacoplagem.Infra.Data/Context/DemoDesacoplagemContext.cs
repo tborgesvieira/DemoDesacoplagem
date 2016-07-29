@@ -21,6 +21,8 @@ namespace DD.DemoDesacoplagem.Infra.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UsuarioConfig());
+            modelBuilder.Configurations.Add(new PessoaConfig());
+            modelBuilder.Configurations.Add(new PessoaFisicaConfig());
 
             modelBuilder.Ignore<Usuario>();
 

@@ -6,7 +6,7 @@ namespace DD.DemoDesacoplagem.Domain.Interfaces.Repository
 {
     public interface IUsuarioRepository : IDisposable
     {
-        Usuario ObjectForId(string id);
+        Usuario ObjectForId(object id);
         IEnumerable<Usuario> GetAll();
     }
 }

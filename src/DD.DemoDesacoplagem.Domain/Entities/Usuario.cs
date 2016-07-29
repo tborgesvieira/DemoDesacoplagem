@@ -31,6 +31,6 @@ namespace DD.DemoDesacoplagem.Domain.Entities
 
         public virtual int AccessFailedCount { get; set; }
 
-        public virtual string UserName { get; set; }
+        public virtual string UserName { get; set; }        
     }
 }

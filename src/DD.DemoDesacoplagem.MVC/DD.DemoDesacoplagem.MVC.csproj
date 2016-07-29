@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PessoaPessoaFisicaViewModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,6 +269,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PessoaPessoaFisicaViewModels\Create.cshtml" />
+    <Content Include="Views\PessoaPessoaFisicaViewModels\Delete.cshtml" />
+    <Content Include="Views\PessoaPessoaFisicaViewModels\Details.cshtml" />
+    <Content Include="Views\PessoaPessoaFisicaViewModels\Edit.cshtml" />
+    <Content Include="Views\PessoaPessoaFisicaViewModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +287,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DD.DemoDesacoplagem.Application\DD.DemoDesacoplagem.Application.csproj">
+      <Project>{431069e6-8f2e-41c9-b83e-595ba914a6d9}</Project>
+      <Name>DD.DemoDesacoplagem.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DD.DemoDesacoplagem.CrossCutting.Identity\DD.DemoDesacoplagem.Infra.CrossCutting.Identity.csproj">
       <Project>{95d85b2e-3e6e-401d-b442-8f47526297e4}</Project>
       <Name>DD.DemoDesacoplagem.Infra.CrossCutting.Identity</Name>
