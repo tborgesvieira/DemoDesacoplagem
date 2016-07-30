@@ -18,15 +18,7 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
         }
 
         public ActionResult Index()
-        {
-            var pf = new PessoaPessoaFisicaViewModel();
-
-            pf.CPF = "00673908119";
-
-            pf.Nome = "Thiago";
-
-            _pessoaFisiacaAppService.Add(pf);
-
+        {            
             return View();
         }
 

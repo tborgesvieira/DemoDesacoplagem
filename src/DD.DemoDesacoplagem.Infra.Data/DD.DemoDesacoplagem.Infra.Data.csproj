@@ -58,6 +58,8 @@
     <Compile Include="Repository\PessoaFisicaRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

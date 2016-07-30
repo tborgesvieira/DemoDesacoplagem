@@ -200,7 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PessoaPessoaFisicaViewModelsController.cs" />
+    <Compile Include="Controllers\PessoaFisicaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,11 +269,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\PessoaPessoaFisicaViewModels\Create.cshtml" />
-    <Content Include="Views\PessoaPessoaFisicaViewModels\Delete.cshtml" />
-    <Content Include="Views\PessoaPessoaFisicaViewModels\Details.cshtml" />
-    <Content Include="Views\PessoaPessoaFisicaViewModels\Edit.cshtml" />
-    <Content Include="Views\PessoaPessoaFisicaViewModels\Index.cshtml" />
+    <Content Include="Views\PessoaFisica\Create.cshtml" />
+    <Content Include="Views\PessoaFisica\Details.cshtml" />
+    <Content Include="Views\PessoaFisica\Edit.cshtml" />
+    <Content Include="Views\PessoaFisica\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

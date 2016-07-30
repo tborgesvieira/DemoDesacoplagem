@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using DD.DemoDesacoplagem.Application.Interfaces;
 using DD.DemoDesacoplagem.Application.ViewModels;
 using DD.DemoDesacoplagem.Domain.Entities;
@@ -15,6 +16,24 @@ namespace DD.DemoDesacoplagem.Application
             _pessoaFisicaServices = pessoaFisicaServices;
         }
 
+        public ICollection<PessoaPessoaFisicaViewModel> GetAll()
+        {
+            return Mapper.Map<ICollection<PessoaPessoaFisicaViewModel>>(_pessoaFisicaServices.GetAll());
+        }
+
+        public PessoaPessoaFisicaViewModel Update(PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
+        {
+            var pessoaFisica = Mapper.Map<PessoaFisica>(pessoaPessoaFisicaViewModel);
+
+            var pessoa = Mapper.Map<Pessoa>(pessoaPessoaFisicaViewModel);
+
+            pessoaFisica.FkPessoa = pessoa;
+
+            _pessoaFisicaServices.Update(pessoaFisica);
+
+            return pessoaPessoaFisicaViewModel;
+        }
+
         public PessoaPessoaFisicaViewModel Add(PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
         {
             var pessoaFisica = Mapper.Map<PessoaFisica>(pessoaPessoaFisicaViewModel);
@@ -23,14 +42,14 @@ namespace DD.DemoDesacoplagem.Application
 
             pessoaFisica.FkPessoa = pessoa;
 
-            _pessoaFisicaServices.Add(pessoaFisica);            
+            _pessoaFisicaServices.Add(pessoaFisica);
 
             return pessoaPessoaFisicaViewModel;
         }
 
-        public PessoaPessoaFisicaViewModel ObjectForId(int id)
+        public PessoaPessoaFisicaViewModel ObjectForId(object id)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<PessoaPessoaFisicaViewModel>(_pessoaFisicaServices.ObjectForId(id));
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using DD.DemoDesacoplagem.Domain.Interfaces.Repository;
 using DD.DemoDesacoplagem.Infra.Data.Context;
 
@@ -30,6 +32,25 @@ namespace DD.DemoDesacoplagem.Infra.Data.Repository
         public T ObjectForId(object id)
         {
             return DbSet.Find(id);
+        }
+
+        public ICollection<T> GetAll()
+        {
+            return DbSet.ToList();
+        }        
+
+        public T Update(T obj)
+        {
+            var entry = Db.Entry(obj);
+            DbSet.Attach(obj);
+            entry.State = EntityState.Modified;
+
+            return obj;
+        }
+
+        public int SaveChanges()
+        {
+            return Db.SaveChanges();
         }
 
         public void Dispose()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DD.DemoDesacoplagem.Domain.Entities;
 using DD.DemoDesacoplagem.Domain.Interfaces.Repository;
 using DD.DemoDesacoplagem.Domain.Interfaces.Services;
@@ -22,6 +23,16 @@ namespace DD.DemoDesacoplagem.Domain.Services
         public PessoaFisica ObjectForId(object id)
         {
             return _pessoaFisicaRepository.ObjectForId(id);
+        }
+
+        public PessoaFisica Update(PessoaFisica obj)
+        {
+            return _pessoaFisicaRepository.Update(obj);
+        }
+
+        public ICollection<PessoaFisica> GetAll()
+        {
+            return _pessoaFisicaRepository.GetAll();
         }
 
         public void Dispose()

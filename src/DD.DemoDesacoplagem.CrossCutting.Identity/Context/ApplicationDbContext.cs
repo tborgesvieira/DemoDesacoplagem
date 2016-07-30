@@ -14,8 +14,6 @@ namespace DD.DemoDesacoplagem.Infra.CrossCutting.Identity.Context
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
-        }
-
-        public System.Data.Entity.DbSet<DD.DemoDesacoplagem.Application.ViewModels.PessoaPessoaFisicaViewModel> PessoaPessoaFisicaViewModels { get; set; }
+        }        
     }
 }

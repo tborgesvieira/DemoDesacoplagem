@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.DemoDesacoplagem.Infra.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.DemoDesacoplagem.Infra.CrossCutting.IoC", "src\DD.DemoDesacoplagem.CrossCutting.IoC\DD.DemoDesacoplagem.Infra.CrossCutting.IoC.csproj", "{3525BC5B-36B7-446B-8022-91A70BD00BDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.DemoDesacoplagem.Application", "src\DD.DemoDesacoplagem.Application\DD.DemoDesacoplagem.Application.csproj", "{431069E6-8F2E-41C9-B83E-595BA914A6D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{3525BC5B-36B7-446B-8022-91A70BD00BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3525BC5B-36B7-446B-8022-91A70BD00BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3525BC5B-36B7-446B-8022-91A70BD00BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{431069E6-8F2E-41C9-B83E-595BA914A6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431069E6-8F2E-41C9-B83E-595BA914A6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431069E6-8F2E-41C9-B83E-595BA914A6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431069E6-8F2E-41C9-B83E-595BA914A6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,6 @@ Global
 		{FC81297F-2E3B-4BEF-827B-500D48BBE713} = {5FAABE55-ACE7-42E9-89DF-21474AC94F04}
 		{95D85B2E-3E6E-401D-B442-8F47526297E4} = {06689723-F4F7-4B88-9076-C853D52DF2FA}
 		{3525BC5B-36B7-446B-8022-91A70BD00BDD} = {06689723-F4F7-4B88-9076-C853D52DF2FA}
+		{431069E6-8F2E-41C9-B83E-595BA914A6D9} = {054E6FDA-62BF-4CE3-BEDC-A7AF2EAB3027}
 	EndGlobalSection
 EndGlobal
