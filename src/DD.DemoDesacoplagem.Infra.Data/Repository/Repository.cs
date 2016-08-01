@@ -20,33 +20,35 @@ namespace DD.DemoDesacoplagem.Infra.Data.Repository
             DbSet = Db.Set<T>();
         }
 
-        public T Add(T obj)
+        public virtual T Add(T obj)
         {
             var ret = DbSet.Add(obj);
-            SaveChanges();
+            
             return ret;
         }
 
-        public T ObjectForId(object id)
+        public virtual T ObjectForId(object id)
         {
             return DbSet.Find(id);
         }
 
-        public ICollection<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
-            return DbSet.ToList();
+            var obj = DbSet.ToList();
+
+            return obj;
         }        
 
-        public T Update(T obj)
+        public virtual T Update(T obj)
         {
             var entry = Db.Entry(obj);
             DbSet.Attach(obj);
             entry.State = EntityState.Modified;
-            SaveChanges();
+            
             return obj;
         }
 
-        public int SaveChanges()
+        public virtual int SaveChanges()
         {
             return Db.SaveChanges();
         }

@@ -8,8 +8,10 @@ namespace DD.DemoDesacoplagem.Application.AutoMapper
     {
         protected override void Configure()
         {
-            CreateMap<PessoaPessoaFisicaViewModel, Pessoa>();
-            CreateMap<PessoaPessoaFisicaViewModel, PessoaFisica>();
+            CreateMap<PessoaPessoaFisicaViewModel, PessoaFisica>()
+                .ForMember(d=>d.Id, op=>op.MapFrom(s=>s.PessoaFisicaId));
+            CreateMap<PessoaPessoaFisicaViewModel, Pessoa>()
+                .ForMember(d => d.Id, op => op.MapFrom(s => s.PessoaId));
         }
     }
 }

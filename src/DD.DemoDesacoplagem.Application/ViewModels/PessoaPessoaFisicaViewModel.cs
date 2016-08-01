@@ -10,9 +10,12 @@ using System.Threading.Tasks;
 namespace DD.DemoDesacoplagem.Application.ViewModels
 {
     public class PessoaPessoaFisicaViewModel
-    {
+    {        
         [Key]
-        public int Id { get; set; }
+        public int PessoaFisicaId { get; set; }
+
+        [Key]
+        public int PessoaId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
@@ -24,10 +27,13 @@ namespace DD.DemoDesacoplagem.Application.ViewModels
         [DisplayName("CPF")]
         public string CPF { get; set; }
 
-        [ScaffoldColumn(false)]
-        public DateTime DataCadastro { get; set; }
+        [Required(ErrorMessage = "Preencha o campo E-mail")]
+        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [EmailAddress(ErrorMessage = "Preencha um E-mail válido")]
+        [DisplayName("E-mail")]
+        public string Email { get; set; }
 
         [ScaffoldColumn(false)]
-        public int PessoaId { get; set; }
+        public DateTime DataCadastro { get; set; }               
     }
 }

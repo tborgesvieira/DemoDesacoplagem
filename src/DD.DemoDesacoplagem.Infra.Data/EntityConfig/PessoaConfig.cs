@@ -13,6 +13,10 @@ namespace DD.DemoDesacoplagem.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(256);
 
+            Property(p => p.Email)
+                .IsRequired()
+                .HasMaxLength(50);
+
             ToTable("Pessoas");
         }
     }

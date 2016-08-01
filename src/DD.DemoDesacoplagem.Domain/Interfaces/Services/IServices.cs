@@ -8,6 +8,6 @@ namespace DD.DemoDesacoplagem.Domain.Interfaces.Services
         T Add(T obj);
         T ObjectForId(object id);
         T Update(T obj);
-        ICollection<T> GetAll();
+        IEnumerable<T> GetAll();
     }
 }

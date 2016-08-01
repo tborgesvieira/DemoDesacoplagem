@@ -8,7 +8,7 @@ namespace DD.DemoDesacoplagem.Domain.Interfaces.Repository
         T Add(T obj);
         T Update(T obj);
         T ObjectForId(object id);
-        ICollection<T> GetAll();
+        IEnumerable<T> GetAll();
         int SaveChanges();
     }
 }

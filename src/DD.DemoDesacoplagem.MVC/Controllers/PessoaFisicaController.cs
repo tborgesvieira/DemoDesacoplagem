@@ -56,7 +56,7 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,CPF,PessoaId")] PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
+        public ActionResult Create([Bind(Include = "Id,Nome,CPF,PessoaId,Email")] PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,CPF,PessoaId")] PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
+        public ActionResult Edit([Bind(Include = "Id,Nome,CPF,PessoaId,Email")] PessoaPessoaFisicaViewModel pessoaPessoaFisicaViewModel)
         {
             if (ModelState.IsValid)
             {

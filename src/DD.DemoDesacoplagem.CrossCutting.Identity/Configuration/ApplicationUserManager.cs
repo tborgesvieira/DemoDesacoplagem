@@ -51,7 +51,7 @@ namespace DD.DemoDesacoplagem.Infra.CrossCutting.Identity.Configuration
             // Definindo a classe de serviço de SMS
             SmsService = new SmsService();
 
-            var provider = new DpapiDataProtectionProvider("Eduardo");
+            var provider = new DpapiDataProtectionProvider("Thiago");
             var dataProtector = provider.Create("ASP.NET Identity");
 
             UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtector);

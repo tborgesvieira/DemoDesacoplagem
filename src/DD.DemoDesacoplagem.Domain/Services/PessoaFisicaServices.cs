@@ -30,7 +30,7 @@ namespace DD.DemoDesacoplagem.Domain.Services
             return _pessoaFisicaRepository.Update(obj);
         }
 
-        public ICollection<PessoaFisica> GetAll()
+        public IEnumerable<PessoaFisica> GetAll()
         {
             return _pessoaFisicaRepository.GetAll();
         }
