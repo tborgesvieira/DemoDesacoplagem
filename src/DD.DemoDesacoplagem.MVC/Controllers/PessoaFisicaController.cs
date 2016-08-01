@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DD.DemoDesacoplagem.Application;
+using DD.DemoDesacoplagem.Application.Interfaces;
 using DD.DemoDesacoplagem.Application.ViewModels;
 using DD.DemoDesacoplagem.Infra.CrossCutting.Identity.Context;
 
@@ -14,9 +15,9 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
 {
     public class PessoaFisicaController : Controller
     {
-        private readonly PessoaFisicaAppService _pessoaFisicaAppService;
+        private readonly IPessoaFisicaAppService _pessoaFisicaAppService;
 
-        public PessoaFisicaController(PessoaFisicaAppService pessoaFisicaAppService)
+        public PessoaFisicaController(IPessoaFisicaAppService pessoaFisicaAppService)
         {
             _pessoaFisicaAppService = pessoaFisicaAppService;
         }
@@ -24,7 +25,9 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
         // GET: PessoaFisica
         public ActionResult Index()
         {
-            return View(_pessoaFisicaAppService.GetAll());
+            var pfs = _pessoaFisicaAppService.GetAll();
+
+            return View(pfs);
         }
 
         // GET: PessoaFisica/Details/5

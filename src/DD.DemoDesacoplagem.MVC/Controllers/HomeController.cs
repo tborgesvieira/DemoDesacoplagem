@@ -10,9 +10,9 @@ namespace DD.DemoDesacoplagem.MVC.Controllers
 {    
     public class HomeController : Controller
     {
-        private readonly IPessoaFisiacaAppService _pessoaFisiacaAppService;
+        private readonly IPessoaFisicaAppService _pessoaFisiacaAppService;
 
-        public HomeController(IPessoaFisiacaAppService pessoaFisiacaAppService)
+        public HomeController(IPessoaFisicaAppService pessoaFisiacaAppService)
         {
             _pessoaFisiacaAppService = pessoaFisiacaAppService;
         }

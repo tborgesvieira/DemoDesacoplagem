@@ -14,7 +14,9 @@ namespace DD.DemoDesacoplagem.Infra.Data.EntityConfig
                 .HasMaxLength(11);
 
             HasRequired(pf => pf.FkPessoa)
-                .WithRequiredPrincipal(p => p.PessoaFisica);            
+                .WithMany(p => p.PessoasFisicas)
+                .HasForeignKey(pf => pf.Pessoa);
+
 
             ToTable("PessoasFisicas");                                    
         }

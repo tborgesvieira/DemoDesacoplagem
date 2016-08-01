@@ -23,9 +23,7 @@ namespace DD.DemoDesacoplagem.Infra.Data.Repository
         public T Add(T obj)
         {
             var ret = DbSet.Add(obj);
-
-            Db.SaveChanges();
-
+            SaveChanges();
             return ret;
         }
 
@@ -44,7 +42,7 @@ namespace DD.DemoDesacoplagem.Infra.Data.Repository
             var entry = Db.Entry(obj);
             DbSet.Attach(obj);
             entry.State = EntityState.Modified;
-
+            SaveChanges();
             return obj;
         }
 

@@ -9,6 +9,7 @@ using DD.DemoDesacoplagem.Domain.Interfaces.Services;
 using DD.DemoDesacoplagem.Domain.Services;
 using DD.DemoDesacoplagem.Infra.Data.Context;
 using DD.DemoDesacoplagem.Infra.Data.Repository;
+using DD.DemoDesacoplagem.Infra.Data.UnitOfWork;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
@@ -26,15 +27,23 @@ namespace DD.DemoDesacoplagem.Infra.CrossCutting.IoC
             container.RegisterPerWebRequest<ApplicationUserManager>();
             container.RegisterPerWebRequest<ApplicationSignInManager>();
 
-            container.Register<DemoDesacoplagemContext>(Lifestyle.Scoped);
+            //AppServices            
+            container.Register<IPessoaFisicaAppService, PessoaFisicaAppService>(Lifestyle.Scoped);
 
-            container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);
-
-            container.Register<IPessoaFisiacaAppService, PessoaFisicaAppService>(Lifestyle.Scoped);
-
+            //Service
+            container.Register<IPessoaServices, PessoaServices>(Lifestyle.Scoped);
             container.Register<IPessoaFisicaServices, PessoaFisicaServices>(Lifestyle.Scoped);
 
+            //Repository
+            container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);
             container.Register<IPessoaFisicaRepository, PessoaFisicaRepository>(Lifestyle.Scoped);
+            container.Register<IPessoaRepository, PessoaRepository>(Lifestyle.Scoped);
+
+            //UnitOfWork
+            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
+
+            //Context
+            container.Register<DemoDesacoplagemContext>(Lifestyle.Scoped);
         }
     }
 }
