@@ -20,12 +20,12 @@ namespace DD.DemoDesacoplagem.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(Container container)
         {
-            container.RegisterPerWebRequest<ApplicationDbContext>();
-            container.RegisterPerWebRequest<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            container.RegisterPerWebRequest<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
-            container.RegisterPerWebRequest<ApplicationRoleManager>();
-            container.RegisterPerWebRequest<ApplicationUserManager>();
-            container.RegisterPerWebRequest<ApplicationSignInManager>();
+            container.Register<ApplicationDbContext>();
+            container.Register<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            container.Register<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
+            container.Register<ApplicationRoleManager>();
+            container.Register<ApplicationUserManager>();
+            container.Register<ApplicationSignInManager>();
 
             //AppServices            
             container.Register<IPessoaFisicaAppService, PessoaFisicaAppService>(Lifestyle.Scoped);

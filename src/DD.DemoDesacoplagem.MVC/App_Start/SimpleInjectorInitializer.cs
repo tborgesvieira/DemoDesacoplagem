@@ -1,19 +1,14 @@
-using System.Reflection;
-using System.Web;
-using System.Web.Mvc;
-using DD.DemoDesacoplagem.Infra.CrossCutting.IoC;
-using DD.DemoDesacoplagem.MVC.App_Start;
-using Microsoft.Owin;
-using SimpleInjector;
-using SimpleInjector.Advanced;
-using SimpleInjector.Integration.Web;
-using SimpleInjector.Integration.Web.Mvc;
-using WebActivator;
-
-[assembly: PostApplicationStartMethod(typeof(SimpleInjectorInitializer), "Initialize")]
+[assembly: WebActivator.PostApplicationStartMethod(typeof(DD.DemoDesacoplagem.MVC.App_Start.SimpleInjectorInitializer), "Initialize")]
 
 namespace DD.DemoDesacoplagem.MVC.App_Start
 {
+    using System.Reflection;
+    using System.Web.Mvc;
+
+    using SimpleInjector;
+    using SimpleInjector.Integration.Web;
+    using SimpleInjector.Integration.Web.Mvc;
+    
     public static class SimpleInjectorInitializer
     {
         /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>
@@ -21,31 +16,22 @@ namespace DD.DemoDesacoplagem.MVC.App_Start
         {
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
-
+            
             InitializeContainer(container);
 
-            // Necessário para registrar o ambiente do Owin que é dependência do Identity
-            // Feito fora da camada de IoC para não levar o System.Web para fora
-            container.RegisterPerWebRequest(() =>
-            {
-                if (HttpContext.Current != null && HttpContext.Current.Items["owin.Environment"] == null && container.IsVerifying())
-                {
-                    return new OwinContext().Authentication;
-                }
-                return HttpContext.Current.GetOwinContext().Authentication;
-
-            });
-
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
-
+            
             container.Verify();
-
+            
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
-
+     
         private static void InitializeContainer(Container container)
         {
-            BootStrapper.RegisterServices(container);
+
+
+            // For instance:
+            // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
         }
     }
 }
